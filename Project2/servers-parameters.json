@@ -1,0 +1,14 @@
+[
+	{
+		"ParameterKey": "EnvironmentName",
+		"ParameterValue": "Udacity-DevOps-Project2"
+	},
+	{
+		"ParameterKey": "S3AccessPolicyARN",
+		"ParameterValue": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+	},
+	{
+		"ParameterKey": "S3BucketURL",
+		"ParameterValue": "s3://my-704825678497-bucket/"
+	}
+]
