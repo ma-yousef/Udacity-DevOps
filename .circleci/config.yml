@@ -27,19 +27,19 @@ jobs:
           name: "save results"
           command: "echo write results to file >> output.txt" 
       - persist_to_workspace:
-          root: tmp/myspace/
+          root: .
           paths: 
-            - output.txt
+            - project2/network.yml
     
   read-results:
       docker:
         - image: cimg/base:stable
       steps:
       - attach_workspace:
-          at: tmp/myspace/
+          at: .
       - run:
           name: "read results"
-          command: "cat output.txt" 
+          command: "cat project2/network.yml" 
           
 
 
