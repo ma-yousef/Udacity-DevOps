@@ -13,7 +13,8 @@ jobs:
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - checkout
+      - checkout:
+        path: /proj_code
       - run:
           name: "Say hello"
           command: "echo Hello, Mahmoud!"
@@ -29,7 +30,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: 
-            - /Project2
+            - /proj_code
     
   read-results:
       docker:
@@ -39,7 +40,7 @@ jobs:
           at: .
       - run:
           name: "read results"
-          command: "cat /Project2/network.yml" 
+          command: "cat /proj_code/Project2/network.yml" 
           
 
 
