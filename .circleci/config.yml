@@ -20,6 +20,25 @@ jobs:
       - run:
           name: "echo env variable"
           command: "echo ${MY_Name_VAR}"
+      - run:
+          name: "save results"
+          command: "echo write results to file >> output.txt" 
+      - persist_to_workspace:
+          root: tmp/myspace
+          paths: 
+            - *.txt
+    
+    read-printed:
+      docker:
+        - image: cimg/base:stable
+      steps:
+      - attach_workspace:
+          at: tmp/myspace
+      - run:
+          name: "read results"
+          command: "cat output.txt" 
+          
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
