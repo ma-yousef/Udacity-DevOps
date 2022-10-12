@@ -30,7 +30,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: 
-            - proj-code/*.*
+            - proj-code/Project2/network.yml
     
   read-results:
       docker:
