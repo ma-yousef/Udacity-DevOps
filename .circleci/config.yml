@@ -27,7 +27,7 @@ jobs:
           name: "save results"
           command: "echo write results to file >> output.txt" 
       - persist_to_workspace:
-          root: .
+          root: ~/
           paths: 
             - ~/project2/network.yml
     
@@ -36,7 +36,7 @@ jobs:
         - image: cimg/base:stable
       steps:
       - attach_workspace:
-          at: .
+          at: ~/
       - run:
           name: "read results"
           command: "cat ~/project2/network.yml" 
