@@ -28,7 +28,7 @@ jobs:
           paths: 
             - output.txt
     
-    read-results:
+  read-results:
       docker:
         - image: cimg/base:stable
       steps:
@@ -46,3 +46,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - read-results:
+          requires: 
+            - say-hello
