@@ -37,10 +37,10 @@ jobs:
         - image: cimg/base:stable
       steps:
         - attach_workspace:
-          at: .
+            at: .
         - run:
-          name: "read results"
-          command: "cat /proj_code/Project2/network.yml" 
+            name: "read results"
+            command: "cat /proj_code/Project2/network.yml" 
           
 
 
