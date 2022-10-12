@@ -17,6 +17,9 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, Mahmoud!"
+      - run:
+          name: "echo env variable"
+          command: "echo ${MY_Name_VAR}"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
