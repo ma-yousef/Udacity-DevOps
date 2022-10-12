@@ -25,18 +25,18 @@ jobs:
           command: "ls -a"
       - run:
           name: "save results"
-          command: "echo write results to file >> output.txt" 
+          command: "cp project2 -- recursive" 
       - persist_to_workspace:
-          root: ~/
+          root: .
           paths: 
-            - project2/network.yml
+            - project2
     
   read-results:
       docker:
         - image: cimg/base:stable
       steps:
       - attach_workspace:
-          at: ~/
+          at: .
       - run:
           name: "read results"
           command: "cat project2/network.yml" 
