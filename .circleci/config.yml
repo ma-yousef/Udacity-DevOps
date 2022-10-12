@@ -22,9 +22,9 @@ jobs:
           command: "echo ${MY_Name_VAR}"
       - run:
           name: "save results"
-          command: "echo write results to file >> tmp/myspace/output.txt" 
+          command: "echo write results to file >> output.txt" 
       - persist_to_workspace:
-          root: tmp/myspace
+          root: .
           paths: 
             - output.txt
     
@@ -33,7 +33,7 @@ jobs:
         - image: cimg/base:stable
       steps:
       - attach_workspace:
-          at: tmp/myspace
+          at: .
       - run:
           name: "read results"
           command: "cat output.txt" 
