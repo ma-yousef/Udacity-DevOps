@@ -6,7 +6,6 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   say-hello:
-    executor: my-executor
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
@@ -25,7 +24,7 @@ jobs:
           command: "echo ${MY_Name_VAR}"
       - run:
           name: "list all"
-          command: "ls -a"
+          command: "chmod 777"
       - run:
           name: "save results"
           command: "echo writing results to file > output.txt" 
