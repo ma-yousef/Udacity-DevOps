@@ -10,7 +10,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
       - image: cimg/base:stable
-    working_directory: ~/proj-code
+    working_directory: /proj-code
     # Add steps to the job
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
@@ -28,19 +28,19 @@ jobs:
           name: "save results"
           command: "echo writing results to file > output.txt" 
       - persist_to_workspace:
-          root: .
+          root: /proj-code
           paths: 
-            - proj-code/Project2/network.yml
+            - proj-code/Project2
     
   read-results:
       docker:
         - image: cimg/base:stable
       steps:
         - attach_workspace:
-            at: .
+            at: /proj-code
         - run:
             name: "read results"
-            command: "cat ~/proj-code/Project2/network.yml" 
+            command: "cat /Project2/network.yml" 
           
 
 
