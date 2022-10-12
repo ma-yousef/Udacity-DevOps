@@ -22,7 +22,7 @@ jobs:
           command: "echo ${MY_Name_VAR}"
       - run:
           name: "save results"
-          command: "echo write results to file >> output.txt" 
+          command: "echo write results to file >> tmp/myspace/output.txt" 
       - persist_to_workspace:
           root: tmp/myspace
           paths: 
