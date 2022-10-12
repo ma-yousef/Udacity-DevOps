@@ -28,7 +28,7 @@ jobs:
           paths: 
             - output.txt
     
-    read-printed:
+    read-results:
       docker:
         - image: cimg/base:stable
       steps:
